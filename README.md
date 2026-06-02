@@ -1,12 +1,5 @@
-# ⏳ Coloquio: Deontología Profesional 1 
+# Coloquio: Deontología Profesional 1 
 **Filosofía Moral y Fronteras Tecnológicas: Recorrido Cronológico del Ethos Profesional**
-
----
-
-[![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=black&style=flat-square)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white&style=flat-square)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?logo=vite&logoColor=white&style=flat-square)](https://vitejs.dev/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.0-F107A3?logo=framer&logoColor=white&style=flat-square)](https://motion.dev/)
 
 Este repositorio aloja la estructura, el código fuente y los recursos interactivos de la presentación web desarrollada para el coloquio de promoción de la materia **Deontología Profesional 1** (5to semestre). 
 

@@ -1,4 +1,4 @@
-# ⏳ Coloquio: Deontología Profesional 1 
+# Coloquio: Deontología Profesional 1 
 **Filosofía Moral y Fronteras Tecnológicas: Recorrido Cronológico del Ethos Profesional**
 
 Este repositorio aloja la estructura, el código fuente y los recursos interactivos de la presentación web desarrollada para el coloquio de promoción de la materia **Deontología Profesional 1** (5to semestre). 

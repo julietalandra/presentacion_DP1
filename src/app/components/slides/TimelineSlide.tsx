@@ -58,9 +58,10 @@ export function TimelineSlide({
 
       {/* Main timeline area - takes remaining space */}
       <div className="relative flex-1 mx-6 md:mx-12">
-        {/* ── Timeline line at top-16 on mobile, centered on desktop ── */}
+        {/* ── Timeline line centered vertically ── */}
         <div
-          className="absolute left-0 right-0 top-16 md:top-1/2"
+          className="absolute left-0 right-0"
+          style={{ top: "50%" }}
         >
           {/* Full dim line (shows past + future) */}
           <div
@@ -143,12 +144,11 @@ export function TimelineSlide({
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65, duration: 0.4 }}
-            className={`absolute text-sm font-semibold tracking-wider uppercase -top-8 ${
-              cardPosition === "above" ? "md:-top-auto md:top-7" : "md:-top-8"
-            }`}
+            className="absolute text-sm font-semibold tracking-wider uppercase"
             style={{
               left: "50%",
               transform: "translateX(-50%)",
+              top: cardPosition === "above" ? 28 : -32,
               color: accentColor,
               whiteSpace: "nowrap",
             }}
@@ -157,70 +157,75 @@ export function TimelineSlide({
           </motion.div>
 
           {/* CARD */}
-          <motion.div
-            initial={{ opacity: 0, y: cardPosition === "above" ? 20 : -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className={`absolute top-8 md:top-10 ${
-              cardPosition === "above" ? "md:top-auto md:bottom-10" : ""
-            }`}
+          <div
+            className="absolute"
             style={{
               left: "50%",
               transform: "translateX(-50%)",
               width: "min(560px, 90vw)",
+              ...(cardPosition === "above"
+                ? { bottom: 40 }
+                : { top: 40 }),
             }}
           >
             {/* Connector line from node to card */}
             <div
-              className={`absolute left-1/2 w-[1px] h-6 md:h-8 -top-6 ${
-                cardPosition === "above" ? "md:-top-auto md:-bottom-8" : "md:-top-8"
-              }`}
+              className="absolute left-1/2 w-[1px]"
               style={{
                 background: `linear-gradient(${cardPosition === "above" ? "180deg" : "0deg"}, ${accentColor}44, transparent)`,
+                height: 32,
+                ...(cardPosition === "above" ? { bottom: -32 } : { top: -32 }),
               }}
             />
 
-            {/* Card itself */}
-            <div
-              className="rounded-2xl p-4 md:p-6 relative overflow-hidden max-h-[52vh] md:max-h-none overflow-y-auto scrollbar-thin"
-              style={{
-                background: "rgba(13, 21, 48, 0.92)",
-                border: `1px solid ${accentColor}28`,
-                backdropFilter: "blur(12px)",
-              }}
+            <motion.div
+              initial={{ opacity: 0, y: cardPosition === "above" ? 20 : -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+              className="w-full"
             >
-              {/* Corner glow */}
+              {/* Card itself */}
               <div
-                className="absolute top-0 left-0 w-24 h-24 opacity-20"
-                style={{ background: `radial-gradient(circle at 0 0, ${accentColor}, transparent 70%)` }}
-              />
-              <h3
+                className="rounded-2xl p-4 md:p-6 relative overflow-hidden max-h-[35vh] md:max-h-none overflow-y-auto scrollbar-thin"
                 style={{
-                  color: "#e8edf8",
-                  fontWeight: 600,
-                  fontSize: "clamp(1.1rem, 4vw, 1.35rem)",
-                  lineHeight: 1.3,
-                  marginBottom: "0.5rem",
+                  background: "rgba(13, 21, 48, 0.92)",
+                  border: `1px solid ${accentColor}28`,
+                  backdropFilter: "blur(12px)",
                 }}
               >
-                {title}
-              </h3>
-              <p
-                style={{
-                  color: "#7a9bc4",
-                  fontSize: "clamp(0.85rem, 3.5vw, 1.05rem)",
-                  lineHeight: 1.5,
-                }}
-              >
-                {text}
-              </p>
-              {/* Bottom accent */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-[2px]"
-                style={{ background: `linear-gradient(90deg, ${accentColor}88, transparent)` }}
-              />
-            </div>
-          </motion.div>
+                {/* Corner glow */}
+                <div
+                  className="absolute top-0 left-0 w-24 h-24 opacity-20"
+                  style={{ background: `radial-gradient(circle at 0 0, ${accentColor}, transparent 70%)` }}
+                />
+                <h3
+                  style={{
+                    color: "#e8edf8",
+                    fontWeight: 600,
+                    fontSize: "clamp(1.1rem, 4vw, 1.35rem)",
+                    lineHeight: 1.3,
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  {title}
+                </h3>
+                <p
+                  style={{
+                    color: "#7a9bc4",
+                    fontSize: "clamp(0.85rem, 3.5vw, 1.05rem)",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {text}
+                </p>
+                {/* Bottom accent */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-[2px]"
+                  style={{ background: `linear-gradient(90deg, ${accentColor}88, transparent)` }}
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
 

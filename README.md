@@ -1,2 +1,58 @@
-# presentacion_DP1
-Presentación interactiva para el coloquio final de Deontología Profesional 1
+# ⏳ Coloquio: Deontología Profesional 1 
+**Filosofía Moral y Fronteras Tecnológicas: Recorrido Cronológico del Ethos Profesional**
+
+Este repositorio aloja la estructura, el código fuente y los recursos interactivos de la presentación web desarrollada para el coloquio de promoción de la materia **Deontología Profesional 1** (5to semestre). 
+
+El proyecto está diseñado como una **Línea de Tiempo Interactiva, Continua y Dinámica**, con el objetivo de ofrecer un recorrido visual, inmersivo y académico a través de la evolución histórica de la ética y la moral, conectando de forma orgánica el pensamiento clásico con los dilemas éticos y tecnológicos más críticos de la actualidad.
+
+---
+
+## 🚀 Características Clave
+* **Línea de tiempo fluida y no deformable:** Adaptada para resoluciones de pantalla ancha sin distorsiones en textos ni gráficos vectoriales.
+* **Micro-animaciones fluidas:** Desarrolladas con Framer Motion (`motion/react`) para transiciones de diapositivas tipo carrusel, efectos de pulso en nodos y un barrido dinámico de la línea de tiempo.
+* **Control interactivo por teclado:** Navegación optimizada mediante flechas direccionales (`←` `→`, `↑` `↓`) y barra espaciadora para una exposición oral sin fricciones.
+* **Estética Cyber-Minimalista:** Paleta de colores en tonos oscuros profundos con acentos neón y efectos de resplandor (`glow`) para emular interfaces de tecnología avanzada.
+* **Botón de retorno rápido:** Una diapositiva final interactiva de agradecimiento que permite reiniciar la exposición al instante con un solo clic.
+
+---
+
+## 📚 Estructura Temática de la Presentación
+El contenido académico está estructurado siguiendo las unidades oficiales de la cátedra, permitiendo un hilo conductor que va desde los cimientos de la filosofía moral hasta la era del algoritmo:
+
+### 🧩 Unidad 1: Cimientos Teóricos
+* **La Complejidad de lo Moral:** La distinción técnica entre Moral (costumbres y normas) y Ética (reflexión filosófica racional), y la definición de los cuatro niveles de reflexión ética según Ricardo Maliandi.
+* **El Nacimiento de la Ética Clásica:** Del relativismo ético combatido por Sócrates (Intelectualismo moral) a la ética de la virtud teleológica de Aristóteles (Eudaimonía, hábito y el término medio).
+
+### ⚖️ Unidad 2: Éticas Normativas
+* **La Ética del Deber (Immanuel Kant):** Giro deontológico, la buena voluntad como bien supremo, obrar por deber y la formulación del Imperativo Categórico.
+* **El Utilitarismo (Bentham y Mill):** Filosofía consecuencialista guiada por el Principio de Utilidad: maximizar el bienestar colectivo y la mayor felicidad para el mayor número de personas.
+
+### 🌐 Unidad 3: Evolución Social
+* **Modernidad y Progreso:** La razón ilustrada, la tecnificación de la vida social y el surgimiento del mito del progreso indefinido.
+* **Posmodernidad y Modernidad Líquida (Zygmunt Bauman):** Caída de los grandes relatos, fragmentación social, identidad de consumo y la flexibilización de los vínculos humanos.
+* **Ética Aplicada y RSE:** La irrupción de la ética aplicada en las organizaciones y el rol de la Responsabilidad Social Empresarial frente al impacto ambiental y social.
+
+### 💻 Unidad 4: Ética y Tecnología
+* **La Ética de los Datos:** La digitalización total, la información como recurso económico primordial y la distinción ético-legal entre datos privados y sensibles.
+* **Tecnología, Sesgos e IA:** Desmitificación del algoritmo como agente neutral; la automatización de sesgos humanos, la equidad en sistemas inteligentes y los desafíos legales/éticos en Propiedad Intelectual aplicados a la IA generativa.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+La aplicación está construida sobre un stack moderno que asegura rendimiento, fluidez gráfica y portabilidad:
+* **React 18** (arquitectura de componentes SPA).
+* **Vite** (servidor de desarrollo y empaquetador veloz).
+* **TypeScript** (tipado estricto para robustez del código).
+* **Framer Motion** (motor de animaciones de alto rendimiento).
+* **Tailwind CSS** (estilizado rápido, responsivo y flexible).
+
+---
+
+## 👩‍💻 Equipo de Trabajo (Expositoras)
+* **Alegre, Gabriela**
+* **Martinez, Ximena**
+* **Vargas, Ana Clara**
+* **Landra, Julieta**
+
+---
+*Coloquio realizado para la cátedra de Deontología Profesional 1.*

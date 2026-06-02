@@ -58,10 +58,9 @@ export function TimelineSlide({
 
       {/* Main timeline area - takes remaining space */}
       <div className="relative flex-1 mx-6 md:mx-12">
-        {/* ── Timeline line at 50% height from top of this area ── */}
+        {/* ── Timeline line at top-16 on mobile, centered on desktop ── */}
         <div
-          className="absolute left-0 right-0"
-          style={{ top: "50%" }}
+          className="absolute left-0 right-0 top-16 md:top-1/2"
         >
           {/* Full dim line (shows past + future) */}
           <div
@@ -144,11 +143,12 @@ export function TimelineSlide({
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65, duration: 0.4 }}
-            className="absolute text-sm font-semibold tracking-wider uppercase"
+            className={`absolute text-sm font-semibold tracking-wider uppercase -top-8 ${
+              cardPosition === "above" ? "md:-top-auto md:top-7" : "md:-top-8"
+            }`}
             style={{
               left: "50%",
               transform: "translateX(-50%)",
-              top: cardPosition === "above" ? 28 : -32,
               color: accentColor,
               whiteSpace: "nowrap",
             }}
@@ -161,7 +161,9 @@ export function TimelineSlide({
             initial={{ opacity: 0, y: cardPosition === "above" ? 20 : -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className={`absolute ${cardPosition === "above" ? "bottom-8 md:bottom-10" : "top-8 md:top-10"}`}
+            className={`absolute top-8 md:top-10 ${
+              cardPosition === "above" ? "md:top-auto md:bottom-10" : ""
+            }`}
             style={{
               left: "50%",
               transform: "translateX(-50%)",
@@ -170,8 +172,8 @@ export function TimelineSlide({
           >
             {/* Connector line from node to card */}
             <div
-              className={`absolute left-1/2 w-[1px] h-6 md:h-8 ${
-                cardPosition === "above" ? "-bottom-6 md:-bottom-8" : "-top-6 md:-top-8"
+              className={`absolute left-1/2 w-[1px] h-6 md:h-8 -top-6 ${
+                cardPosition === "above" ? "md:-top-auto md:-bottom-8" : "md:-top-8"
               }`}
               style={{
                 background: `linear-gradient(${cardPosition === "above" ? "180deg" : "0deg"}, ${accentColor}44, transparent)`,
@@ -180,7 +182,7 @@ export function TimelineSlide({
 
             {/* Card itself */}
             <div
-              className="rounded-2xl p-4 md:p-6 relative overflow-hidden"
+              className="rounded-2xl p-4 md:p-6 relative overflow-hidden max-h-[52vh] md:max-h-none overflow-y-auto scrollbar-thin"
               style={{
                 background: "rgba(13, 21, 48, 0.92)",
                 border: `1px solid ${accentColor}28`,

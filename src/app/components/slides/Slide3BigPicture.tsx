@@ -62,164 +62,166 @@ export function Slide3BigPicture() {
       </motion.div>
 
       {/* Timeline area */}
-      <div className="relative flex-1 flex items-center">
-        {/* Full-width SVG timeline (only for the horizontal line and arrow) */}
-        <div className="absolute inset-x-0" style={{ top: "50%", transform: "translateY(-50%)" }}>
-          <svg
-            width="100%"
-            height="260"
-            viewBox="0 0 1000 260"
-            preserveAspectRatio="none"
-            overflow="visible"
-          >
-            <defs>
-              <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#00c8ff" stopOpacity="0.3" />
-                <stop offset="50%" stopColor="#00c8ff" stopOpacity="1" />
-                <stop offset="100%" stopColor="#a078ff" stopOpacity="0.8" />
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
-            {/* Dim base line */}
-            <line x1="0" y1="130" x2="1000" y2="130" stroke="#00c8ff" strokeWidth="1" opacity="0.1" />
-
-            {/* Animated sweep line (uses clipPath via motion rect) */}
-            <clipPath id="sweep-clip">
-              <motion.rect
-                x="0" y="0" height="260"
-                initial={{ width: 0 }}
-                animate={{ width: 1000 }}
-                transition={{ delay: LINE_DELAY, duration: LINE_DURATION, ease: "easeInOut" }}
-              />
-            </clipPath>
-            <line
-              x1="0" y1="130" x2="1000" y2="130"
-              stroke="url(#lineGrad)"
-              strokeWidth="2.5"
-              filter="url(#glow)"
-              clipPath="url(#sweep-clip)"
-            />
-
-            {/* Arrow at end */}
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: LINE_DELAY + LINE_DURATION + 0.1, duration: 0.3 }}
+      <div className="relative flex-1 flex items-center overflow-x-auto overflow-y-hidden pb-4 md:pb-0 scrollbar-thin">
+        <div className="relative w-[900px] md:w-full h-[260px] flex-shrink-0">
+          {/* Full-width SVG timeline (only for the horizontal line and arrow) */}
+          <div className="absolute inset-x-0" style={{ top: "50%", transform: "translateY(-50%)" }}>
+            <svg
+              width="100%"
+              height="260"
+              viewBox="0 0 1000 260"
+              preserveAspectRatio="none"
+              overflow="visible"
             >
-              <path d="M990 124 L1000 130 L990 136" stroke="#a078ff" strokeWidth="2" fill="none" strokeLinecap="round" />
-            </motion.g>
-          </svg>
-        </div>
+              <defs>
+                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#00c8ff" stopOpacity="0.3" />
+                  <stop offset="50%" stopColor="#00c8ff" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#a078ff" stopOpacity="0.8" />
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
 
-        {/* Non-stretching Node SVGs positioned absolutely */}
-        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[260px] pointer-events-none">
-          {nodes.map((node, i) => {
-            const xGlobal = 60 + (i * 880) / (nodes.length - 1);
-            const pct = (xGlobal / 1000) * 100;
-            const nodeDelay = NODE_BASE_DELAY + i * NODE_INTERVAL;
-            const labelY = node.above ? 80 : 180;
-            const lineY1 = node.above ? 118 : 142;
-            const lineY2 = node.above ? 98 : 162;
-            const accentColor = `hsl(${190 + i * 15}, 100%, ${55 + i * 2}%)`;
+              {/* Dim base line */}
+              <line x1="0" y1="130" x2="1000" y2="130" stroke="#00c8ff" strokeWidth="1" opacity="0.1" />
 
-            return (
-              <div
-                key={i}
-                className="absolute top-0 bottom-0 pointer-events-none"
-                style={{
-                  left: `${pct}%`,
-                  width: "160px",
-                  transform: "translateX(-50%)",
-                }}
+              {/* Animated sweep line (uses clipPath via motion rect) */}
+              <clipPath id="sweep-clip">
+                <motion.rect
+                  x="0" y="0" height="260"
+                  initial={{ width: 0 }}
+                  animate={{ width: 1000 }}
+                  transition={{ delay: LINE_DELAY, duration: LINE_DURATION, ease: "easeInOut" }}
+                />
+              </clipPath>
+              <line
+                x1="0" y1="130" x2="1000" y2="130"
+                stroke="url(#lineGrad)"
+                strokeWidth="2.5"
+                filter="url(#glow)"
+                clipPath="url(#sweep-clip)"
+              />
+
+              {/* Arrow at end */}
+              <motion.g
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: LINE_DELAY + LINE_DURATION + 0.1, duration: 0.3 }}
               >
-                <svg
-                  width="160"
-                  height="260"
-                  viewBox="0 0 160 260"
-                  overflow="visible"
+                <path d="M990 124 L1000 130 L990 136" stroke="#a078ff" strokeWidth="2" fill="none" strokeLinecap="round" />
+              </motion.g>
+            </svg>
+          </div>
+
+          {/* Non-stretching Node SVGs positioned absolutely */}
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[260px] pointer-events-none">
+            {nodes.map((node, i) => {
+              const xGlobal = 60 + (i * 880) / (nodes.length - 1);
+              const pct = (xGlobal / 1000) * 100;
+              const nodeDelay = NODE_BASE_DELAY + i * NODE_INTERVAL;
+              const labelY = node.above ? 80 : 180;
+              const lineY1 = node.above ? 118 : 142;
+              const lineY2 = node.above ? 98 : 162;
+              const accentColor = `hsl(${190 + i * 15}, 100%, ${55 + i * 2}%)`;
+
+              return (
+                <div
+                  key={i}
+                  className="absolute top-0 bottom-0 pointer-events-none"
+                  style={{
+                    left: `${pct}%`,
+                    width: "160px",
+                    transform: "translateX(-50%)",
+                  }}
                 >
-                  {/* Connector line */}
-                  <motion.line
-                    x1={80} y1={lineY1}
-                    x2={80} y2={lineY2}
-                    stroke={accentColor}
-                    strokeWidth="1"
-                    strokeOpacity="0.5"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{ delay: nodeDelay + 0.1, duration: 0.25 }}
-                  />
-
-                  {/* Label lines */}
-                  {node.label.split("\n").map((line, li) => (
-                    <motion.text
-                      key={li}
-                      x={80}
-                      y={node.above ? labelY - (node.label.split("\n").length - 1 - li) * 20 : labelY + li * 20}
-                      textAnchor="middle"
-                      fill="#e8edf8"
-                      fontSize="14"
-                      fontFamily="Inter, system-ui, sans-serif"
-                      fontWeight="500"
-                      initial={{ opacity: 0, y: node.above ? 6 : -6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: nodeDelay + 0.2 + li * 0.05, duration: 0.3 }}
-                    >
-                      {line}
-                    </motion.text>
-                  ))}
-
-                  {/* Year label */}
-                  <motion.text
-                    x={80}
-                    y={node.above ? labelY - node.label.split("\n").length * 20 - 6 : labelY + node.label.split("\n").length * 20 + 6}
-                    textAnchor="middle"
-                    fill={accentColor}
-                    fontSize="11"
-                    fontFamily="Inter, system-ui, sans-serif"
-                    fontWeight="600"
-                    letterSpacing="1"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: nodeDelay + 0.15, duration: 0.3 }}
+                  <svg
+                    width="160"
+                    height="260"
+                    viewBox="0 0 160 260"
+                    overflow="visible"
                   >
-                    {node.year.toUpperCase()}
-                  </motion.text>
+                    {/* Connector line */}
+                    <motion.line
+                      x1={80} y1={lineY1}
+                      x2={80} y2={lineY2}
+                      stroke={accentColor}
+                      strokeWidth="1"
+                      strokeOpacity="0.5"
+                      initial={{ pathLength: 0, opacity: 0 }}
+                      animate={{ pathLength: 1, opacity: 1 }}
+                      transition={{ delay: nodeDelay + 0.1, duration: 0.25 }}
+                    />
 
-                  {/* Outer ring */}
-                  <motion.circle
-                    cx={80} cy={130} r={10}
-                    fill="none"
-                    stroke={accentColor}
-                    strokeWidth="1"
-                    strokeOpacity="0.4"
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: nodeDelay, duration: 0.35, type: "spring", stiffness: 400 }}
-                    style={{ transformOrigin: "80px 130px" }}
-                  />
+                    {/* Label lines */}
+                    {node.label.split("\n").map((line, li) => (
+                      <motion.text
+                        key={li}
+                        x={80}
+                        y={node.above ? labelY - (node.label.split("\n").length - 1 - li) * 20 : labelY + li * 20}
+                        textAnchor="middle"
+                        fill="#e8edf8"
+                        fontSize="14"
+                        fontFamily="Inter, system-ui, sans-serif"
+                        fontWeight="500"
+                        initial={{ opacity: 0, y: node.above ? 6 : -6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: nodeDelay + 0.2 + li * 0.05, duration: 0.3 }}
+                      >
+                        {line}
+                      </motion.text>
+                    ))}
 
-                  {/* Inner dot */}
-                  <motion.circle
-                    cx={80} cy={130} r={5}
-                    fill={accentColor}
-                    filter="url(#glow)"
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: nodeDelay + 0.05, duration: 0.3, type: "spring", stiffness: 500 }}
-                    style={{ transformOrigin: "80px 130px" }}
-                  />
-                </svg>
-              </div>
-            );
-          })}
+                    {/* Year label */}
+                    <motion.text
+                      x={80}
+                      y={node.above ? labelY - node.label.split("\n").length * 20 - 6 : labelY + node.label.split("\n").length * 20 + 6}
+                      textAnchor="middle"
+                      fill={accentColor}
+                      fontSize="11"
+                      fontFamily="Inter, system-ui, sans-serif"
+                      fontWeight="600"
+                      letterSpacing="1"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: nodeDelay + 0.15, duration: 0.3 }}
+                    >
+                      {node.year.toUpperCase()}
+                    </motion.text>
+
+                    {/* Outer ring */}
+                    <motion.circle
+                      cx={80} cy={130} r={10}
+                      fill="none"
+                      stroke={accentColor}
+                      strokeWidth="1"
+                      strokeOpacity="0.4"
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: nodeDelay, duration: 0.35, type: "spring", stiffness: 400 }}
+                      style={{ transformOrigin: "80px 130px" }}
+                    />
+
+                    {/* Inner dot */}
+                    <motion.circle
+                      cx={80} cy={130} r={5}
+                      fill={accentColor}
+                      filter="url(#glow)"
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: nodeDelay + 0.05, duration: 0.3, type: "spring", stiffness: 500 }}
+                      style={{ transformOrigin: "80px 130px" }}
+                    />
+                  </svg>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 

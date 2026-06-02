@@ -45,7 +45,7 @@ export function TimelineSlide({
       </div>
 
       {/* Header strip */}
-      <div className="relative z-10 flex items-center justify-between px-12 pt-16 pb-0">
+      <div className="relative z-10 flex items-center justify-between px-6 md:px-12 pt-10 md:pt-16 pb-0">
         <div>
           <span className="text-sm font-medium tracking-[0.3em] uppercase" style={{ color: accentColor }}>
             {unit}
@@ -57,7 +57,7 @@ export function TimelineSlide({
       </div>
 
       {/* Main timeline area - takes remaining space */}
-      <div className="relative flex-1 mx-12">
+      <div className="relative flex-1 mx-6 md:mx-12">
         {/* ── Timeline line at 50% height from top of this area ── */}
         <div
           className="absolute left-0 right-0"
@@ -161,29 +161,26 @@ export function TimelineSlide({
             initial={{ opacity: 0, y: cardPosition === "above" ? 20 : -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className="absolute"
+            className={`absolute ${cardPosition === "above" ? "bottom-8 md:bottom-10" : "top-8 md:top-10"}`}
             style={{
               left: "50%",
               transform: "translateX(-50%)",
               width: "min(560px, 90vw)",
-              ...(cardPosition === "above"
-                ? { bottom: 40 }
-                : { top: 40 }),
             }}
           >
             {/* Connector line from node to card */}
             <div
-              className="absolute left-1/2 w-[1px]"
+              className={`absolute left-1/2 w-[1px] h-6 md:h-8 ${
+                cardPosition === "above" ? "-bottom-6 md:-bottom-8" : "-top-6 md:-top-8"
+              }`}
               style={{
                 background: `linear-gradient(${cardPosition === "above" ? "180deg" : "0deg"}, ${accentColor}44, transparent)`,
-                height: 32,
-                ...(cardPosition === "above" ? { bottom: -32 } : { top: -32 }),
               }}
             />
 
             {/* Card itself */}
             <div
-              className="rounded-2xl p-6 relative overflow-hidden"
+              className="rounded-2xl p-4 md:p-6 relative overflow-hidden"
               style={{
                 background: "rgba(13, 21, 48, 0.92)",
                 border: `1px solid ${accentColor}28`,
@@ -199,7 +196,7 @@ export function TimelineSlide({
                 style={{
                   color: "#e8edf8",
                   fontWeight: 600,
-                  fontSize: "1.35rem",
+                  fontSize: "clamp(1.1rem, 4vw, 1.35rem)",
                   lineHeight: 1.3,
                   marginBottom: "0.5rem",
                 }}
@@ -209,8 +206,8 @@ export function TimelineSlide({
               <p
                 style={{
                   color: "#7a9bc4",
-                  fontSize: "1.05rem",
-                  lineHeight: 1.65,
+                  fontSize: "clamp(0.85rem, 3.5vw, 1.05rem)",
+                  lineHeight: 1.5,
                 }}
               >
                 {text}

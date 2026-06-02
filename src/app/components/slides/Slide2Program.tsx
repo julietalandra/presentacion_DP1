@@ -33,7 +33,7 @@ const units = [
 
 export function Slide2Program() {
   return (
-    <div className="relative flex flex-col h-full px-12 py-10 overflow-hidden">
+    <div className="relative flex flex-col h-full px-6 py-6 md:px-12 md:py-10 overflow-hidden">
       {/* Background grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <svg width="100%" height="100%">
@@ -52,25 +52,25 @@ export function Slide2Program() {
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-8"
+          className="mb-4 md:mb-8"
         >
           <span className="text-xs tracking-[0.3em] uppercase" style={{ color: "#00c8ff" }}>
             Programa de la Materia
           </span>
-          <h2 className="mt-1" style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: "#e8edf8", fontWeight: 600 }}>
+          <h2 className="mt-1" style={{ fontSize: "clamp(1.3rem, 3vw, 2.2rem)", color: "#e8edf8", fontWeight: 600 }}>
             Estructura del Coloquio
           </h2>
         </motion.div>
 
         {/* 4 Unit Cards */}
-        <div className="flex-1 grid grid-cols-2 gap-5 pb-4" style={{ gridTemplateRows: "1fr 1fr" }}>
+        <div className="flex-1 grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-3 md:gap-5 pb-4">
           {units.map((unit, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 + i * 0.12, duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
-              className="relative flex flex-col justify-between p-6 rounded-2xl overflow-hidden"
+              className="relative flex flex-col justify-between p-4 md:p-6 rounded-2xl overflow-hidden"
               style={{
                 background: "rgba(13, 21, 48, 0.8)",
                 border: `1px solid ${unit.color}22`,
@@ -87,26 +87,26 @@ export function Slide2Program() {
               {/* Number */}
               <div className="flex items-start justify-between">
                 <span
-                  className="text-5xl select-none"
+                  className="text-3xl md:text-5xl select-none"
                   style={{ color: unit.color, opacity: 0.15, fontWeight: 800, lineHeight: 1 }}
                 >
                   {unit.number}
                 </span>
                 <div
-                  className="w-2 h-2 rounded-full mt-2"
+                  className="w-2 h-2 rounded-full mt-1 md:mt-2"
                   style={{ background: unit.color }}
                 />
               </div>
 
               {/* Title */}
               <div>
-                <p className="text-sm tracking-widest uppercase mb-1" style={{ color: unit.color }}>
+                <p className="text-xs md:text-sm tracking-widest uppercase mb-0.5 md:mb-1" style={{ color: unit.color }}>
                   Unidad {unit.number}
                 </p>
-                <h3 style={{ color: "#e8edf8", fontWeight: 600, fontSize: "1.45rem", lineHeight: 1.3 }}>
+                <h3 style={{ color: "#e8edf8", fontWeight: 600, fontSize: "clamp(1.1rem, 4vw, 1.45rem)", lineHeight: 1.3 }}>
                   {unit.title}
                 </h3>
-                <p style={{ color: "#7a9bc4", fontSize: "1.1rem", marginTop: "0.25rem" }}>
+                <p style={{ color: "#7a9bc4", fontSize: "clamp(0.85rem, 3vw, 1.1rem)", marginTop: "0.15rem md:marginTop: 0.25rem" }}>
                   {unit.subtitle}
                 </p>
               </div>

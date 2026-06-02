@@ -10,7 +10,7 @@ const TOTAL_SLIDES = 13;
 
 const timelineSlides = [
   {
-    year: "Kilómetro Cero (Atemporal)",
+    year: "Atemporal",
     title: "La Complejidad de lo Moral",
     text: "Diferencia entre Moral (fenómenos y costumbres) y Ética (fundamentación racional). El análisis del fenómeno moral se divide en cuatro niveles de reflexión: saber espontáneo, ética normativa, metaética y ética descriptiva.",
     cardPosition: "above" as const,
@@ -160,7 +160,7 @@ export default function App() {
       {current > 0 && (
         <button
           onClick={prev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full transition-all duration-200"
           style={{
             background: "rgba(0,200,255,0.07)",
             border: "1px solid rgba(0,200,255,0.2)",
@@ -174,7 +174,7 @@ export default function App() {
           }}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M10 3L5 8L10 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
       )}
@@ -182,7 +182,7 @@ export default function App() {
       {current < TOTAL_SLIDES - 1 && (
         <button
           onClick={next}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full transition-all duration-200"
           style={{
             background: "rgba(0,200,255,0.07)",
             border: "1px solid rgba(0,200,255,0.2)",
@@ -196,7 +196,7 @@ export default function App() {
           }}
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </button>
       )}

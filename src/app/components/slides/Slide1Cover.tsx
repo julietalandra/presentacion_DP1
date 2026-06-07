@@ -9,52 +9,52 @@ export function Slide1Cover() {
           {/* Node network */}
           <g opacity="0.12">
             {/* Lines */}
-            <line x1="100" y1="350" x2="300" y2="200" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="300" y1="200" x2="550" y2="280" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="550" y1="280" x2="800" y2="150" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="800" y1="150" x2="1050" y2="250" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="1050" y1="250" x2="1150" y2="400" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="300" y1="200" x2="200" y2="500" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="200" y1="500" x2="500" y2="600" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="500" y1="600" x2="750" y2="520" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="750" y1="520" x2="1050" y2="250" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="550" y1="280" x2="500" y2="600" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="550" y1="280" x2="750" y2="520" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="800" y1="150" x2="750" y2="520" stroke="#00c8ff" strokeWidth="1"/>
-            <line x1="100" y1="350" x2="200" y2="500" stroke="#00c8ff" strokeWidth="1"/>
+            <line x1="100" y1="350" x2="300" y2="200" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="300" y1="200" x2="550" y2="280" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="550" y1="280" x2="800" y2="150" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="800" y1="150" x2="1050" y2="250" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="1050" y1="250" x2="1150" y2="400" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="300" y1="200" x2="200" y2="500" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="200" y1="500" x2="500" y2="600" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="500" y1="600" x2="750" y2="520" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="750" y1="520" x2="1050" y2="250" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="550" y1="280" x2="500" y2="600" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="550" y1="280" x2="750" y2="520" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="800" y1="150" x2="750" y2="520" stroke="#00c8ff" strokeWidth="1" />
+            <line x1="100" y1="350" x2="200" y2="500" stroke="#00c8ff" strokeWidth="1" />
             {/* Nodes */}
-            <circle cx="100" cy="350" r="5" fill="#00c8ff"/>
-            <circle cx="300" cy="200" r="5" fill="#00c8ff"/>
-            <circle cx="550" cy="280" r="8" fill="#00c8ff"/>
-            <circle cx="800" cy="150" r="5" fill="#00c8ff"/>
-            <circle cx="1050" cy="250" r="5" fill="#00c8ff"/>
-            <circle cx="1150" cy="400" r="4" fill="#00c8ff"/>
-            <circle cx="200" cy="500" r="5" fill="#00c8ff"/>
-            <circle cx="500" cy="600" r="5" fill="#00c8ff"/>
-            <circle cx="750" cy="520" r="7" fill="#00c8ff"/>
+            <circle cx="100" cy="350" r="5" fill="#00c8ff" />
+            <circle cx="300" cy="200" r="5" fill="#00c8ff" />
+            <circle cx="550" cy="280" r="8" fill="#00c8ff" />
+            <circle cx="800" cy="150" r="5" fill="#00c8ff" />
+            <circle cx="1050" cy="250" r="5" fill="#00c8ff" />
+            <circle cx="1150" cy="400" r="4" fill="#00c8ff" />
+            <circle cx="200" cy="500" r="5" fill="#00c8ff" />
+            <circle cx="500" cy="600" r="5" fill="#00c8ff" />
+            <circle cx="750" cy="520" r="7" fill="#00c8ff" />
           </g>
           {/* Decorative hexagons */}
           <g opacity="0.06">
-            <polygon points="960,80 1000,104 1000,152 960,176 920,152 920,104" stroke="#00c8ff" strokeWidth="1" fill="none"/>
-            <polygon points="1000,104 1040,80 1080,104 1080,152 1040,176 1000,152" stroke="#00c8ff" strokeWidth="1" fill="none"/>
-            <polygon points="960,176 1000,200 1000,248 960,272 920,248 920,200" stroke="#00c8ff" strokeWidth="1" fill="none"/>
+            <polygon points="960,80 1000,104 1000,152 960,176 920,152 920,104" stroke="#00c8ff" strokeWidth="1" fill="none" />
+            <polygon points="1000,104 1040,80 1080,104 1080,152 1040,176 1000,152" stroke="#00c8ff" strokeWidth="1" fill="none" />
+            <polygon points="960,176 1000,200 1000,248 960,272 920,248 920,200" stroke="#00c8ff" strokeWidth="1" fill="none" />
           </g>
           <g opacity="0.05">
-            <polygon points="120,40 160,64 160,112 120,136 80,112 80,64" stroke="#00c8ff" strokeWidth="1" fill="none"/>
-            <polygon points="160,112 200,136 200,184 160,208 120,184 120,136" stroke="#00c8ff" strokeWidth="1" fill="none"/>
+            <polygon points="120,40 160,64 160,112 120,136 80,112 80,64" stroke="#00c8ff" strokeWidth="1" fill="none" />
+            <polygon points="160,112 200,136 200,184 160,208 120,184 120,136" stroke="#00c8ff" strokeWidth="1" fill="none" />
           </g>
           {/* Glow orb center-left */}
           <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#00c8ff" stopOpacity="0.15"/>
-            <stop offset="100%" stopColor="#00c8ff" stopOpacity="0"/>
+            <stop offset="0%" stopColor="#00c8ff" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#00c8ff" stopOpacity="0" />
           </radialGradient>
-          <ellipse cx="200" cy="350" rx="260" ry="200" fill="url(#glow1)"/>
+          <ellipse cx="200" cy="350" rx="260" ry="200" fill="url(#glow1)" />
           {/* Glow orb top-right */}
           <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#3b6fff" stopOpacity="0.12"/>
-            <stop offset="100%" stopColor="#3b6fff" stopOpacity="0"/>
+            <stop offset="0%" stopColor="#3b6fff" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#3b6fff" stopOpacity="0" />
           </radialGradient>
-          <ellipse cx="1000" cy="200" rx="220" ry="160" fill="url(#glow2)"/>
+          <ellipse cx="1000" cy="200" rx="220" ry="160" fill="url(#glow2)" />
         </svg>
       </div>
 
@@ -63,7 +63,7 @@ export function Slide1Cover() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center max-w-4xl">
-        
+
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ export function Slide1Cover() {
           transition={{ delay: 0.85, duration: 0.6 }}
           className="mt-10 flex flex-wrap justify-center gap-3"
         >
-          {["Alegre Gabriela", "Martinez Ximena", "Vargas Ana Clara", "Landra Julieta"].map((name, i) => (
+          {["Alegre Gabriela", "Martinez Ximena", "Vargas Ana Valentina", "Landra Julieta"].map((name, i) => (
             <div
               key={i}
               className="px-4 py-2 rounded-full text-sm"
